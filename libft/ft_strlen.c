@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 12:15:36 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/11 17:36:45 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/01/11 15:42:10 by cbravo-a          #+#    #+#             */
+/*   Updated: 2023/01/11 16:13:31 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <string.h>
 
-int ft_isdigit(int c)
+size_t ft_strlen(const char *str)
 {
-    if (c >= 48 && c <= 57)
-        return (1);
-    return (0);
+    int i;
+
+    i = 0;
+    while (str[i] != '\0')
+    {
+        i++;
+    }
+    return (i);
 }
 
 /*int main(void)
 {
-    printf("%d\n", ft_isdigit('a'));
-    printf("%d\n", ft_isdigit('8'));
+    printf("%d\n", ft_strlen("Hola buenas tardes"));
 }*/

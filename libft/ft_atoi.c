@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 12:15:36 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/11 17:36:45 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/01/11 15:49:41 by cbravo-a          #+#    #+#             */
+/*   Updated: 2023/01/11 15:51:06 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_isdigit(int c)
+int ft_atoi(char *str)
 {
-    if (c >= 48 && c <= 57)
-        return (1);
-    return (0);
+    int contador;
+    int num;
+    
 }
-
-/*int main(void)
-{
-    printf("%d\n", ft_isdigit('a'));
-    printf("%d\n", ft_isdigit('8'));
-}*/
