@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 12:57:46 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/12 13:58:35 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/01/12 14:17:40 by cbravo-a          #+#    #+#             */
+/*   Updated: 2023/01/12 14:23:21 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h> 
+#include <stdio.h>
+#include <string.h> 
 
-char *ft_strchr(const char *s, int c)
+size_t ft_strlen(const char *str)
 {
-    char *point;
+    int i;
 
-    point = (char *)s;
-    while (*point)
+    i = 0;
+    while (str[i] != '\0')
     {
-        if (*point == c)
-            return (point);
-        point++;
+        i++;
     }
-    if (*point == '\0' && c == '\0')
-        return (point);
-    return (NULL);
+    return (i);
 }
 
-/*int main(void)
+/*int ft_strcmp(const char *s1, const char *s2)
 {
-    printf("MIA: %s\n", ft_strchr("Buenas tardes", 116));
-    printf("OROGINAL: %s\n", ft_strchr("Buenas tardes", 116));
-    return (0);
+    int len1;
+    int len2;
+    
+    len1 = ft_strlen(s1);
+    len2 = ft_strlen(s2);
+    
+    
 }*/
+
+int main(void)
+{
+    //printf("MIA: %s\n", ft_strcmp("Buenas tardes", 101));
+    printf("OROGINAL: %d\n", strcmp("Buenas tardes", "Buenas nochesesesesese"));
+    return (0);
+}

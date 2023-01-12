@@ -1,37 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/12 12:57:46 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/12 13:58:35 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/01/12 13:59:16 by cbravo-a          #+#    #+#             */
+/*   Updated: 2023/01/12 14:08:42 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h> 
+#include <stdio.h>
+#include <string.h> 
 
-char *ft_strchr(const char *s, int c)
+size_t ft_strlen(const char *str)
+{
+    int i;
+
+    i = 0;
+    while (str[i] != '\0')
+    {
+        i++;
+    }
+    return (i);
+}
+
+char *ft_strrchr(const char *s, int c)
 {
     char *point;
+    int len;
 
-    point = (char *)s;
-    while (*point)
+    len = ft_strlen(s);
+    point = (char *)s + len - 1;
+    if (c == '\0')
+    {
+        point++;
+        return (point);
+    }   
+    while (len != 0)
     {
         if (*point == c)
             return (point);
-        point++;
+        len--;
+        point--;
     }
-    if (*point == '\0' && c == '\0')
-        return (point);
     return (NULL);
 }
 
-/*int main(void)
+int main(void)
 {
-    printf("MIA: %s\n", ft_strchr("Buenas tardes", 116));
-    printf("OROGINAL: %s\n", ft_strchr("Buenas tardes", 116));
+    printf("MIA: %s\n", ft_strrchr("Buenas tardes", 101));
+    printf("OROGINAL: %s\n", strrchr("Buenas tardes", 101));
     return (0);
-}*/
+}
