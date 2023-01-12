@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:52:34 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/11 17:34:38 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/12 12:46:25 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ size_t    ft_strlcpy(char *dst, const char *src, size_t siz)
     return (ft_strlen(src));
 }
 
-/*int main(void)
+int main(void)
 {
     char    test[] = " ";
     char    test2[] = " ";
@@ -50,4 +50,4 @@ size_t    ft_strlcpy(char *dst, const char *src, size_t siz)
     printf("%s\n", test);
     printf("%s\n", test2);
     return (0);
-}*/
+}
