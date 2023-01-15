@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:08:04 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/12 17:13:02 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:05:26 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,17 @@ size_t ft_strlen(const char *str)
 char *ft_strnstr(const char *s1, const char *s2, size_t len)
 {
     size_t i;
+    size_t j;
     char *prim;
 
     i = 0;
+    j = 0;
     prim = (char *)s1;
     if (s2[i] == '\0')
         return (prim);
     while ((s1[i] != '\0' && s2[i] != '\0') && i < len)
     {
-        if (s1[i] != s2[i])
+        if (prim == s2)
         {
             if (s1[i] )
             return (prim);    

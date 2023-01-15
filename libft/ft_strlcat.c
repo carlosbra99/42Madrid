@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 17:37:32 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/12 12:52:08 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:03:47 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,40 +25,41 @@ size_t ft_strlen(const char *str)
     return (i);
 }
 
-/*size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
-    size_t srclen;
-	size_t dstlen;
+	size_t	i;
+	size_t	j;
+	size_t	dst_len;
+	size_t	src_len;
 
-	srclen = ft_strlen(src);
-	dstlen = ft_strlen(dst);
-	if (dstlen > size)
+	i = 0;
+	j = 0;
+	while (dst[j] != '\0')
 	{
-		dstlen = size;
+		j++;
 	}
-	if (dstlen == size || size == 0)
+	dst_len = j;
+	src_len = ft_strlen(src);
+	if (size == 0 || size <= dst_len)
+		return (src_len + size);
+	while (src[i] != '\0' && i < size - dst_len - 1)
 	{
-		return (dstlen + srclen);
+		dst[j] = src[i];
+		i++;
+		j++;
 	}
-	if (srclen < size - dstlen)
-	{
-	
-	}
-	else
-	{
-		
-	}
-	return (dstlen + srclen);
-}*/
+	dst[j] = '\0';
+	return (dst_len + src_len);
+}
 
-int main(void)
+/*int main(void)
 {
-    char    test[] = " ";
+    char    test[] = "Adios";
     char    test2[] = "Adios";
 
-    //printf("MINE: %lu\n", ft_strlcat(test, "hello, world!", 2));
+    printf("MINE: %lu\n", ft_strlcat(test, "hello, world!", 3));
     printf("ORIGINAL: %lu\n", strlcat(test2, "hello, world!", 3));
     printf("%s\n", test);
     printf("%s\n", test2);
     return (0);
-}
+}*/
