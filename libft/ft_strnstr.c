@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:08:04 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/13 17:05:26 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:58:19 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ char *ft_strnstr(const char *s1, const char *s2, size_t len)
     return (NULL);
 }
 
-int main(void)
+/*int main(void)
 {
     printf("MIA: %s\n", ft_strnstr("Buenas tardes", "tardes", 9));
     printf("OROGINAL: %s\n", strnstr("Buenas tardes", "tardes", 9));
     return (0);
-}
+}*/

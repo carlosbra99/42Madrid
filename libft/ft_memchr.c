@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:02:09 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/13 18:05:48 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:54:16 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void *ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-int    main(void)
+/*int    main(void)
 {
     char    dst[20] = "test";
     char    dst2[20] = "test";
@@ -42,4 +42,4 @@ int    main(void)
     printf("MAIN: %s\n", ft_memchr(dst, 's', 5));
     printf("ORIGINAL: %s\n", memchr(dst2, 's', 5));
     return (0);
-}
+}*/
