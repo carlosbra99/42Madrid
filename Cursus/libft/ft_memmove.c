@@ -6,29 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 17:25:25 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/13 18:11:36 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:57:12 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-
-void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
-{
-    size_t			i;
-	unsigned char	*access_src;
-	unsigned char	*edit_dst;
-
-	i = 0;
-	access_src = (unsigned char*)src;
-	edit_dst = (unsigned char*)dst;
-	while (i < n)
-	{
-		edit_dst[i] = access_src[i];
-		i++;
-	}
-	return (dst);
-}
+#include "libft.h"
 
 void *ft_memmove(void *dst, const void *src, size_t n)
 {

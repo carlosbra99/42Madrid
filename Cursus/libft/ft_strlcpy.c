@@ -6,25 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:52:34 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/16 19:57:24 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:57:59 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-//#include <libft.h>
-
-size_t ft_strlen(const char *str)
-{
-    int i;
-
-    i = 0;
-    while (str[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
-}
+#include "libft.h"
 
 size_t    ft_strlcpy(char *dst, const char *src, size_t siz)
 {

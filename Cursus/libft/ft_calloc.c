@@ -6,35 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:10:34 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/16 12:53:16 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:56:25 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-void *ft_memset(void *s, int c, size_t n)
-{
-    char    *str;
-    size_t i;
-
-    str = (char *)s;
-    i = 0;
-    while (i < n)
-    {
-        str[i] = (unsigned char)c;
-        i++;
-    }
-    return (s);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	if (n != 0)
-	{
-		ft_memset(s, '\0', n);
-	}
-}
+#include "libft.h"
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
@@ -47,7 +23,7 @@ void *ft_calloc(size_t nmemb, size_t size)
 	return (str);
 }
 
-int main() {
+/*int main() {
     // Test calloc function with n = 5 and size = sizeof(int)
     int *ptr = (int *)calloc(5, sizeof(int));
     if (ptr == NULL) {
@@ -78,4 +54,4 @@ int main() {
     free(ptr);
 
     return (0);
-}
+}*/

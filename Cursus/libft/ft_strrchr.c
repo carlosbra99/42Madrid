@@ -6,25 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:59:16 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/16 19:58:47 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:59:03 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h> 
-
-size_t ft_strlen(const char *str)
-{
-    int i;
-
-    i = 0;
-    while (str[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
-}
+#include "libft.h"
 
 char *ft_strrchr(const char *s, int c)
 {
