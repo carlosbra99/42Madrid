@@ -6,14 +6,14 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 17:19:17 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/13 18:11:18 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:23:00 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void *ft_memcpy(void *dst, const void *src, size_t n)
 {
     size_t			i;
 	unsigned char	*access_src;

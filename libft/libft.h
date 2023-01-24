@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:49:30 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/16 20:05:53 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:22:21 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int ft_toupper(int c);
 void	ft_bzero(void *s, size_t n);
 void    *ft_calloc(size_t nmemb, size_t size);
 void    *ft_memchr(const void *s, int c, size_t n);
-void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+void    *ft_memcpy(void *dst, const void *src, size_t n);
 void    *ft_memmove(void *dst, const void *src, size_t n);
 void    *ft_memset(void *s, int c, size_t n);
 
