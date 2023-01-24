@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:10:34 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/13 18:28:44 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/16 12:53:16 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void *ft_calloc(size_t nmemb, size_t size)
 	return (str);
 }
 
-/*int main() {
+int main() {
     // Test calloc function with n = 5 and size = sizeof(int)
     int *ptr = (int *)calloc(5, sizeof(int));
     if (ptr == NULL) {
@@ -78,4 +78,4 @@ void *ft_calloc(size_t nmemb, size_t size)
     free(ptr);
 
     return (0);
-}*/
+}
