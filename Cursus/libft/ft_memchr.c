@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/13 17:19:17 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/13 18:11:18 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/01/13 18:02:09 by cbravo-a          #+#    #+#             */
+/*   Updated: 2023/01/16 19:54:16 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void *ft_memchr(const void *s, int c, size_t n)
 {
     size_t			i;
-	unsigned char	*access_src;
-	unsigned char	*edit_dst;
+	unsigned char	*str;
+	unsigned char	character;
 
+	str = (unsigned char *)s;
+	character = (unsigned char)c;
 	i = 0;
-	access_src = (unsigned char*)src;
-	edit_dst = (unsigned char*)dst;
 	while (i < n)
 	{
-		edit_dst[i] = access_src[i];
+		if (*str == character)
+		{
+			return (str);
+		}
+		str++;
 		i++;
 	}
-	return (dst);
+	return (NULL);
 }
 
 /*int    main(void)
 {
-    char    *dst = "HOLA";
-    char    *dst2 = "HOLA";
-    char    *src = "TEST";
-    char    *src2 = "TEST";
+    char    dst[20] = "test";
+    char    dst2[20] = "test";
     
-    ft_memcpy(dst, src, 0);
-    printf("MAIN: %s\n", dst);
-    memcpy(dst2, src2, 0);
-    printf("ORIGINAL: %s\n", dst2);
+    printf("MAIN: %s\n", ft_memchr(dst, 's', 5));
+    printf("ORIGINAL: %s\n", memchr(dst2, 's', 5));
     return (0);
 }*/

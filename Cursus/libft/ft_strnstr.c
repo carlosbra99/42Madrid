@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 15:52:34 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/12 12:46:25 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/01/12 16:08:04 by cbravo-a          #+#    #+#             */
+/*   Updated: 2023/01/16 19:58:19 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
-//#include <libft.h>
+#include <string.h> 
 
 size_t ft_strlen(const char *str)
 {
@@ -26,28 +26,32 @@ size_t ft_strlen(const char *str)
     return (i);
 }
 
-size_t    ft_strlcpy(char *dst, const char *src, size_t siz)
+char *ft_strnstr(const char *s1, const char *s2, size_t len)
 {
     size_t i;
+    size_t j;
+    char *prim;
 
     i = 0;
-    while ((src[i] != '\0') && (i + 1) < siz)
+    j = 0;
+    prim = (char *)s1;
+    if (s2[i] == '\0')
+        return (prim);
+    while ((s1[i] != '\0' && s2[i] != '\0') && i < len)
     {
-        dst[i] = src[i];
+        if (prim == s2)
+        {
+            if (s1[i] )
+            return (prim);    
+        }
         i++;
     }
-    dst[i] = '\0';
-    return (ft_strlen(src));
+    return (NULL);
 }
 
-int main(void)
+/*int main(void)
 {
-    char    test[] = " ";
-    char    test2[] = " ";
-
-    printf("MINE: %lu\n", ft_strlcpy(test, "hello, world!", 2));
-    printf("ORIGINAL: %lu\n", strlcpy(test2, "hello, world!", 2));
-    printf("%s\n", test);
-    printf("%s\n", test2);
+    printf("MIA: %s\n", ft_strnstr("Buenas tardes", "tardes", 9));
+    printf("OROGINAL: %s\n", strnstr("Buenas tardes", "tardes", 9));
     return (0);
-}
+}*/

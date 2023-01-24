@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:26:42 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/13 18:31:50 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/16 19:56:26 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char *ft_strdup(const char *s)
 	return (str_copy);
 }
 
-int    main(void)
+/*int    main(void)
 {
     char    *str = malloc(5);
     char    *cpy;
@@ -63,4 +63,4 @@ int    main(void)
     free(cpy2);
     free(str);
     return (0);
-}
+}*/
