@@ -5,13 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-<<<<<<< HEAD:libft/Makefile
-#    Created: 2023/01/16 13:58:11 by cbravo-a          #+#    #+#              #
-#    Updated: 2023/01/24 16:28:22 by cbravo-a         ###   ########.fr        #
-=======
-#    Created: 2023/01/24 17:17:08 by cbravo-a          #+#    #+#              #
-#    Updated: 2023/01/24 17:17:39 by cbravo-a         ###   ########.fr        #
->>>>>>> 4cb6308d1f9680561eece516b820bbfe4e3d4f50:Cursus/libft/Makefile
+#    Created: 2023/01/24 17:33:28 by cbravo-a          #+#    #+#              #
+#    Updated: 2023/01/24 17:35:05 by cbravo-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
