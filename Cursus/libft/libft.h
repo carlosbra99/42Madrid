@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:49:30 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/24 16:22:21 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:16:53 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ void    *ft_memchr(const void *s, int c, size_t n);
 void    *ft_memcpy(void *dst, const void *src, size_t n);
 void    *ft_memmove(void *dst, const void *src, size_t n);
 void    *ft_memset(void *s, int c, size_t n);
+void    ft_putchar_fd(char c, int fd);
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 char    *ft_strchr(const char *s, int c);
 char    *ft_strdup(const char *s);
