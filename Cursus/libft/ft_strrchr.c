@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 13:59:16 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/24 17:59:03 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:39:00 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char *ft_strrchr(const char *s, int c)
         point++;
         return (point);
     }   
-    while (len != 0)
+    while (len >= 0)
     {
         if (*point == c)
             return (point);

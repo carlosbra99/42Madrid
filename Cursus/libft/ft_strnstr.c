@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:08:04 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/24 18:05:56 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/24 18:41:40 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 char *ft_strnstr(const char *s1, const char *s2, size_t len)
 {
     size_t i;
-    size_t j;
     char *prim;
 
     i = 0;
-    j = 0;
     if (!s1 && !len)
 		return (0);
     prim = (char *)s1;
