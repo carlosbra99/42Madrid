@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:49:30 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/25 17:16:53 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:22:04 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ void	ft_putnbr_fd(int n, int fd);
 
 char    *ft_strchr(const char *s, int c);
 char    *ft_strdup(const char *s);
-char    *ft_strnstr(const char *s1, const char *s2, size_t len);
+char    *ft_strnstr(const char *haystack, const char *needle, size_t len);
 char    *ft_strrchr(const char *s, int c);
+char    *ft_substr(char const *s, unsigned int start, size_t len);
+char    *ft_strjoin(char const *s1, char const *s2);
 
 size_t  ft_strlcat(char *dst, const char *src, size_t size);
-size_t  ft_strlcpy(char *dst, const char *src, size_t siz);
+size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t  ft_strlen(const char *str);
 
 #endif

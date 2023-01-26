@@ -6,7 +6,7 @@
 #    By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/24 17:33:28 by cbravo-a          #+#    #+#              #
-#    Updated: 2023/01/25 18:34:37 by cbravo-a         ###   ########.fr        #
+#    Updated: 2023/01/26 17:22:20 by cbravo-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,9 @@ MY_SOURCES = ft_isalpha.c \
 						ft_putchar_fd.c \
 						ft_putendl_fd.c \
 						ft_putnbr_fd.c \
-						ft_putstr_fd.c
+						ft_putstr_fd.c \
+						ft_substr.c \
+						ft_strjoin.c
 						
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 CC = gcc

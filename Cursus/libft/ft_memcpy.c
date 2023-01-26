@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 17:19:17 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/24 16:23:00 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:40:03 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ void *ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*access_src;
 	unsigned char	*edit_dst;
 
+	if (!dst && !src)
+		return(0);
 	i = 0;
 	access_src = (unsigned char*)src;
 	edit_dst = (unsigned char*)dst;
 	while (i < n)
 	{
-		edit_dst[i] = access_src[i];
-		i++;
+			edit_dst[i] = access_src[i];
+			i++;
 	}
 	return (dst);
 }
