@@ -6,7 +6,7 @@
 #    By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/24 17:33:28 by cbravo-a          #+#    #+#              #
-#    Updated: 2023/01/26 17:22:20 by cbravo-a         ###   ########.fr        #
+#    Updated: 2023/01/27 13:19:29 by cbravo-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,12 +44,18 @@ MY_SOURCES = ft_isalpha.c \
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+
 $(NAME): $(MY_OBJECTS)
 	@ar r $(NAME) $(MY_OBJECTS)
+
 all:    $(NAME)
+
 clean:
 		@rm -f $(MY_OBJECTS)
+
 fclean: clean
 		@rm -f $(NAME)
+
 re: fclean all
+
 .PHONY: all clean fclean re
