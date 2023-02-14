@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/13 17:16:24 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/14 10:54:53 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/02/07 16:49:30 by cbravo-a          #+#    #+#             */
+/*   Updated: 2023/02/07 17:14:55 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (n != 0)
-	{
-		ft_memset(s, '\0', n);
-	}
+    if (!del)
+        return ;
+    if (lst)
+    {
+        (*del)(lst->content);
+        free(lst);
+    }
 }

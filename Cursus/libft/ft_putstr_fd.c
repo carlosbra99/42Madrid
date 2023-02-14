@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:56:30 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/25 17:07:30 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:03:35 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void ft_putstr_fd(char *s, int fd)
 {
-    if(s)
+    if (s)
 	{
-		while(*s)
+		while (*s)
 		{
 			ft_putchar_fd(*s, fd);
 			s++;

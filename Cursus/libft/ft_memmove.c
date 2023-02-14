@@ -6,15 +6,15 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 17:25:25 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/24 17:57:12 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:50:36 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-    int i;
+	int	i;
 
 	if (dst > src)
 	{

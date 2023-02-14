@@ -6,14 +6,14 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 15:49:41 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/12 12:27:47 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/14 11:12:13 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
     int contador;
     int resul;
