@@ -6,7 +6,7 @@
 #    By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/24 17:33:28 by cbravo-a          #+#    #+#              #
-#    Updated: 2023/02/14 12:00:12 by cbravo-a         ###   ########.fr        #
+#    Updated: 2023/02/14 14:03:03 by cbravo-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,18 +44,20 @@ MY_SOURCES = ft_isalpha.c \
 						ft_itoa.c \
 						ft_strmapi.c \
 						ft_striteri.c \
-						ft_lstnew.c \
-						ft_lstadd_front.c \
-						ft_lstsize.c \
-						ft_lstlast.c \
-						ft_lstadd_back.c \
-						ft_lstdelone.c \
-						ft_lstclear.c \
-						ft_lstiter.c \
-						ft_lstmap.c \
 						ft_split.c
+
+MY_BONUS = ft_lstnew_bonus.c \
+						ft_lstadd_front_bonus.c \
+						ft_lstsize_bonus.c \
+						ft_lstlast_bonus.c \
+						ft_lstadd_back_bonus.c \
+						ft_lstdelone_bonus.c \
+						ft_lstclear_bonus.c \
+						ft_lstiter_bonus.c \
+						ft_lstmap_bonus.c 
 						
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
+BONUS_OBJECTS = $(MY_BONUS:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
@@ -65,11 +67,15 @@ $(NAME): $(MY_OBJECTS)
 all:    $(NAME)
 
 clean:
-		@rm -f $(MY_OBJECTS)
+		@rm -f $(MY_OBJECTS) $(BONUS_OBJECTS)
 
 fclean: clean
 		@rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bonus: $(BONUS_OBJECTS)
+	@ar rcs $(NAME) $(BONUS_OBJECTS)
+	@echo "Bonus has been compiled"
+
+.PHONY: all clean fclean re bonus

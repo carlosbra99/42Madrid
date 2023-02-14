@@ -6,36 +6,65 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:18:57 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/07 11:32:26 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/14 14:42:50 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_itoa(int n)
+static void ft_putnbr_itoa(int n, int count, char *ret)
 {
-    char    *str;
-    long    nbr;
-    size_t  siz;
+    char    a;
+    
+    ret[count] = '\0';
+    if (n < 0)
+    {
+        if (n == -2147483648)
+        {
+            count--;
+            ret[count] = '8';
+            n = -214748364;
+        }  
+        n *= -1;
+        ret[0] = '-';
+    }
+    if (n == 0)
+        ret[0] = '0';
+    while (n > 0)
+    {
+        a = n % 10 + '0';
+        ret[count - 1] = a;
+        n /= 10;
+        count--;
+    }
+}
 
-    nbr = n;
-    siz = nbr > 0 ? nbr : -nbr;
-    while (n)
+static int ft_check_count_itoa(int n)
+{
+    int i;
+    
+    i = 0;
+    if (n == 0)
+        return (1);
+    else if (n < 0)
+        i = 1;
+    while (n != 0)
     {
         n /= 10;
-        siz++;
+        i++;
     }
-    if (!(str = (char *)malloc(siz + 1)))
-        return (0);
-    *(str + siz--) = '\0';
-    while (nbr > 0)
-    {
-        *(str + siz--) = nbr % 10 + '0';
-        nbr /= 10;    
-    }
-    if (siz == 0 && str[1] == '\0')
-        *(str + siz) = '\0';
-    else if (siz == 0 && str[1] != '\0')
-        *(str + siz) = '-';
-    return (str);
+    return (i);
+}
+
+char *ft_itoa(int n)
+{
+    char    *ret;
+    int count;
+    
+    count = ft_check_count_itoa(n);
+    ret = (char *)malloc(sizeof(char) * (count + 1));
+    if (ret == 0)
+        return (NULL);
+    ft_putnbr_itoa(n, count, ret);
+    return (ret);
 }
