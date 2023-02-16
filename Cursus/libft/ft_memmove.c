@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 17:25:25 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/14 11:50:36 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:46:50 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	int	i;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	if (dst > src)
 	{
 		i = (int)n - 1;

@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 17:49:30 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/16 12:20:50 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:33:58 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_isprint(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_tolower(int c);
-int		t_toupper(int c);
+int		ft_toupper(int c);
 int		ft_lstsize_bonus(t_list *lst);
 
 void	ft_bzero(void *s, size_t n);
