@@ -6,21 +6,21 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:31:53 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/14 14:02:22 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:45:17 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize_bonus(t_list *lst)
+int	ft_lstsize_bonus(t_list *lst)
 {
-    size_t  i;
+	size_t	i;
 
-    i = 0;
-    while(lst)
-    {
-        lst = lst->next;
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

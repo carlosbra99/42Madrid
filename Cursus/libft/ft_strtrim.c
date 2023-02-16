@@ -6,15 +6,15 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 13:28:16 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/14 12:52:58 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:45:47 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t i;
+	size_t	i;
 
 	if (!s1 || !set)
 		return (0);

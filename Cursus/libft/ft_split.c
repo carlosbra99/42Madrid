@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:18:04 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/14 14:23:29 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:56:58 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	contador_palabra(const char *str, char c)
 {
-	int i;
-	int trigger;
+	int	i;
+	int	trigger;
 
 	i = 0;
 	trigger = 0;
@@ -33,9 +33,9 @@ static int	contador_palabra(const char *str, char c)
 	return (i);
 }
 
-static char *duplicador_palabra(const char *str, int start, int finish)
+static char	*duplicador_palabra(const char *str, int start, int finish)
 {
-    char	*word;
+	char	*word;
 	int		i;
 
 	i = 0;
@@ -46,9 +46,9 @@ static char *duplicador_palabra(const char *str, int start, int finish)
 	return (word);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    size_t	i;
+	size_t	i;
 	size_t	j;
 	int		index;
 	char	**split;

@@ -6,16 +6,16 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:07:54 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/13 18:10:44 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:48:55 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    size_t			i;
+	size_t			i;
 	unsigned char	*s1_str;
 	unsigned char	*s2_str;
 
@@ -35,10 +35,10 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 
 /*int    main(void)
 {
-    char    *dst = "teAt";
-    char    *cmp = "teat";
-    
-    printf("MAIN: %d\n", ft_memcmp(dst, cmp, 5));
-    printf("ORIGINAL: %d\n", memcmp(dst, cmp, 5));
-    return (0);
+	char    *dst = "teAt";
+	char    *cmp = "teat";
+	
+	printf("MAIN: %d\n", ft_memcmp(dst, cmp, 5));
+	printf("ORIGINAL: %d\n", memcmp(dst, cmp, 5));
+	return (0);
 }*/

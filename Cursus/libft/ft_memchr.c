@@ -6,16 +6,16 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 18:02:09 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/16 19:54:16 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:59:51 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    size_t			i;
+	size_t			i;
 	unsigned char	*str;
 	unsigned char	character;
 
@@ -36,10 +36,10 @@ void *ft_memchr(const void *s, int c, size_t n)
 
 /*int    main(void)
 {
-    char    dst[20] = "test";
-    char    dst2[20] = "test";
-    
-    printf("MAIN: %s\n", ft_memchr(dst, 's', 5));
-    printf("ORIGINAL: %s\n", memchr(dst2, 's', 5));
-    return (0);
+	char    dst[20] = "test";
+	char    dst2[20] = "test";
+	
+	printf("MAIN: %s\n", ft_memchr(dst, 's', 5));
+	printf("ORIGINAL: %s\n", memchr(dst2, 's', 5));
+	return (0);
 }*/

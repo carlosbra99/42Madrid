@@ -6,21 +6,21 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 12:10:06 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/01/11 12:32:51 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:59:41 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-        return (1);
-    return (0);
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return (1);
+	return (0);
 }
 
 /*int main()
 {
-    printf("%d\n", ft_isalpha('a'));
-    printf("%d\n", ft_isalpha('.'));
+	printf("%d\n", ft_isalpha('a'));
+	printf("%d\n", ft_isalpha('.'));
 }*/
