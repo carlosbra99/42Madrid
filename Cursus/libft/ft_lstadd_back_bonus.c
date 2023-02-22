@@ -6,13 +6,13 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:41:11 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/16 11:39:26 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:20:09 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back_bonus(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*ult;
 
@@ -20,7 +20,7 @@ void	ft_lstadd_back_bonus(t_list **lst, t_list *new)
 	{
 		if (*lst)
 		{
-			ult = ft_lstlast_bonus(*lst);
+			ult = ft_lstlast(*lst);
 			ult->next = new;
 		}
 		else
