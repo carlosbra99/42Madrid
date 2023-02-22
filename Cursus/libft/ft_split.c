@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:18:04 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/16 11:56:58 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:58:34 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ char	**ft_split(char const *s, char c)
 	int		index;
 	char	**split;
 
-	if (!s || !(split = malloc((contador_palabra(s, c) + 1) * sizeof(char *))))
+	split = malloc((contador_palabra(s, c) + 1) * sizeof(char *));
+	if (!s || !(split))
 		return (0);
 	i = 0;
 	j = 0;

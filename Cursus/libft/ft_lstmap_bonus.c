@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 17:43:50 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/22 11:20:46 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:57:09 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	first = NULL;
 	while (lst)
 	{
-		if (!(new = ft_lstnew((*f)(lst->content))))
+		new = ft_lstnew(f(lst->content));
+		if (!new)
 		{
 			while (first)
 			{

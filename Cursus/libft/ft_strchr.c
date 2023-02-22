@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:57:46 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/16 13:06:40 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:00:12 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,10 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	*point;
-	int i;
+	int		i;
 
 	point = (char *)s;
 	i = 0;
-	/*while (*point)
-	{
-		if (*point == c)
-			return (point);
-		point++;
-	}
-	if (*point == '\0' && c == '\0')
-		return (point);
-	return (NULL);*/
 	while (point[i] != (char)c)
 	{
 		if (point[i] == '\0')
