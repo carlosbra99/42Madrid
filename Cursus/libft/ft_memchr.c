@@ -33,13 +33,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/*int    main(void)
-{
-	char    dst[20] = "test";
-	char    dst2[20] = "test";
-	
-	printf("MAIN: %s\n", ft_memchr(dst, 's', 5));
-	printf("ORIGINAL: %s\n", memchr(dst2, 's', 5));
-	return (0);
-}*/

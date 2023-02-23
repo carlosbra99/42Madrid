@@ -27,17 +27,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-/*int    main(void)
-{
-	char str[50] = "GeeksForGeeks is for programming geeks.";
-	printf("\nBefore MY memset(): %s\n", str);
-	ft_memset(str + 13, '.', 8*sizeof(char));
-	printf("After MY memset():  %s", str);
-
-	char str2[50] = "GeeksForGeeks is for programming geeks.";
-	printf("\nBefore memset(): %s\n", str2);
-	memset(str2 + 13, '.', 8*sizeof(char));
-	printf("After memset():  %s", str2);
-	return (0);
-}*/

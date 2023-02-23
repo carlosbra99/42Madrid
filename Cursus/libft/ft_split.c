@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	contador_palabra(const char *str, char c)
+static int	word_counter(const char *str, char c)
 {
 	int	i;
 	int	trigger;
@@ -33,7 +33,7 @@ static int	contador_palabra(const char *str, char c)
 	return (i);
 }
 
-static char	*duplicador_palabra(const char *str, int start, int finish)
+static char	*double_word(const char *str, int start, int finish)
 {
 	char	*word;
 	int		i;
@@ -53,7 +53,7 @@ char	**ft_split(char const *s, char c)
 	int		index;
 	char	**split;
 
-	split = malloc((contador_palabra(s, c) + 1) * sizeof(char *));
+	split = malloc((word_counter(s, c) + 1) * sizeof(char *));
 	if (!s || !(split))
 		return (0);
 	i = 0;
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 			index = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
 		{
-			split[j++] = duplicador_palabra(s, index, i);
+			split[j++] = double_word(s, index, i);
 			index = -1;
 		}
 		i++;

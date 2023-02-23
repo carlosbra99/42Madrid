@@ -31,17 +31,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-/*int    main(void)
-{
-	char    *dst = "HOLA";
-	char    *dst2 = "HOLA";
-	char    *src = "TEST";
-	char    *src2 = "TEST";
-	
-	ft_memcpy(dst, src, 0);
-	printf("MAIN: %s\n", dst);
-	memcpy(dst2, src2, 0);
-	printf("ORIGINAL: %s\n", dst2);
-	return (0);
-}*/

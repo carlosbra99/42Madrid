@@ -39,10 +39,3 @@ int	ft_atoi(const char *str)
 	}
 	return (resul * sign);
 }
-
-/*int main(void)
-{
-	printf("%d\n", ft_atoi("-9A"));
-	printf("%d\n", atoi("-9A"));
-	//return (0);
-}*/

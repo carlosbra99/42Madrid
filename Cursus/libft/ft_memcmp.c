@@ -32,13 +32,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-/*int    main(void)
-{
-	char    *dst = "teAt";
-	char    *cmp = "teat";
-	
-	printf("MAIN: %d\n", ft_memcmp(dst, cmp, 5));
-	printf("ORIGINAL: %d\n", memcmp(dst, cmp, 5));
-	return (0);
-}*/
