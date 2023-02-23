@@ -40,15 +40,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[j] = '\0';
 	return (dst_len + src_len);
 }
-
-/*int main(void)
-{
-    char    test[] = "Adios";
-    char    test2[] = "Adios";
-
-    printf("MINE: %lu\n", ft_strlcat(test, "hello, world!", 3));
-    printf("ORIGINAL: %lu\n", strlcat(test2, "hello, world!", 3));
-    printf("%s\n", test);
-    printf("%s\n", test2);
-    return (0);
-}*/

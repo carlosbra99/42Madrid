@@ -32,21 +32,3 @@ char	*ft_strdup(const char *s)
 	}
 	return (str_copy);
 }
-
-/*int    main(void)
-{
-	char    *str = malloc(5);
-	char    *cpy;
-	char    *cpy2;
-	if (!str)
-		return (0);
-	str = "test";
-	cpy = ft_strdup(str);
-	cpy2 = strdup(str);
-	printf("%s\n", cpy);
-	printf("%s\n", cpy2);
-	free(cpy);
-	free(cpy2);
-	free(str);
-	return (0);
-}*/

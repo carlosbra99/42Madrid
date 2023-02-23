@@ -30,15 +30,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	}
 	return (count);
 }
-
-/*int main(void)
-{
-	char    test[] = " ";
-	char    test2[] = " ";
-
-	printf("MINE: %lu\n", ft_strlcpy(test, "hello, world!", 2));
-	printf("ORIGINAL: %lu\n", strlcpy(test2, "hello, world!", 2));
-	printf("%s\n", test);
-	printf("%s\n", test2);
-	return (0);
-}*/

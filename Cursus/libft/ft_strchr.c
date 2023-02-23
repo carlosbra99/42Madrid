@@ -28,10 +28,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (&point[i]);
 }
-
-/*int main(void)
-{
-	printf("MIA: %s\n", ft_strchr("Buenas tardes", 116));
-	printf("OROGINAL: %s\n", ft_strchr("Buenas tardes", 116));
-	return (0);
-}*/

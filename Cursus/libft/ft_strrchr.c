@@ -29,10 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-
-/*int main(void)
-{
-	printf("MIA: %s\n", ft_strrchr("Buenas tardes", 101));
-	printf("OROGINAL: %s\n", strrchr("Buenas tardes", 101));
-	return (0);
-}*/

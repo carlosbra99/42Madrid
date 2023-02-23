@@ -38,10 +38,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
-/*int main(void)
-{
-	printf("MIA: %s\n", ft_strnstr("Buenas tardes", "tardes", 9));
-	printf("OROGINAL: %s\n", strnstr("Buenas tardes", "tardes", 9));
-	return (0);
-}*/
