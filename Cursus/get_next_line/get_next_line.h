@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:10:07 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/03/01 17:15:17 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:56:31 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@
 
 size_t	ft_strlen(const char *str);
 char    *get_next_line(int fd);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
