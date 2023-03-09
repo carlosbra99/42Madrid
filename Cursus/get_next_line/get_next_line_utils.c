@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:09:03 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/03/01 18:21:06 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/03/09 11:11:18 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,24 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcpy(strjoin, s1, i + 1);
 	ft_strlcat(strjoin, s2, i + 1);
 	return (strjoin);
+}
+
+char	*ft_join(char *dest, char *s1, char *s2)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (s1 && s1[i])
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	while (s2 && s2[j])
+	{
+		dest[i + j] = s2[j];
+		j++;
+	}
+	dest[i + j] = '\0';
+	return (dest);
 }
