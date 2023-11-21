@@ -6,11 +6,12 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:38:00 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/11/21 11:37:18 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:48:37 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+//#include <fnctl.h>
 
 char	*ft_read_line(char *str)
 {

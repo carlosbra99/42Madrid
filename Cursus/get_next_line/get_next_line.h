@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:10:07 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/09/05 18:28:34 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:28:57 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 size_t	ft_strlen(char *str);
 char	*get_next_line(int fd);
