@@ -6,42 +6,42 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:38:00 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/09/08 13:53:12 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/11/21 11:37:18 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char    *ft_read_line(char *str)
+char	*ft_read_line(char *str)
 {
-    int i;
-    char    *line;
-    
-    if (!str || !str[0])
-        return (NULL);
-    i = 0;
-    while (str[i] && str[i] != '\n')
-        i++;
-    if (str[i] == '\n')
-        i++;
-    line = (char *)malloc(1+ i * sizeof(char));
-    if (!line)
-        return (NULL);
-    i = 0;
-    while (str[i] && str[i] != '\n')
-    {
-        line[i] = str[i];
-        i++;
-    }
-    if (str[i] == '\n')
-        line[i++] = '\n';
-    line[i] = '\0';
-    return (line);
+	int		i;
+	char	*line;
+
+	if (!str || !str[0])
+		return (NULL);
+	i = 0;
+	while (str[i] && str[i] != '\n')
+		i++;
+	if (str[i] == '\n')
+		i++;
+	line = (char *)malloc(1 + i * sizeof(char));
+	if (!line)
+		return (NULL);
+	i = 0;
+	while (str[i] && str[i] != '\n')
+	{
+		line[i] = str[i];
+		i++;
+	}
+	if (str[i] == '\n')
+		line[i++] = '\n';
+	line[i] = '\0';
+	return (line);
 }
 
-char    *ft_move_start(char *str)
+char	*ft_move_start(char *str)
 {
-    char	*new_buff;
+	char	*new_buff;
 	int		i;
 	int		j;
 
@@ -68,9 +68,9 @@ char    *ft_move_start(char *str)
 	return (new_buff);
 }
 
-char    *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-    char		*tmp;
+	char		*tmp;
 	int			fd_read;
 	static char	*start_str;
 
