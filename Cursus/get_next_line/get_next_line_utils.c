@@ -6,54 +6,62 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:09:03 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/03/09 11:11:18 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/09/05 18:25:57 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(char	*str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
+	if (!str)
+		return (0);
+	while (str[i])
 		i++;
-	}
 	return (i);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
-	char	*point;
-	int		i;
-
-	point = (char *)s;
-	i = 0;
-	while (point[i] != (char)c)
-	{
-		if (point[i] == '\0')
-			return (0);
-		i++;
-	}
-	return (&point[i]);
-}
-
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*strjoin;
 	size_t	i;
 
-	if (!s1 || !s2)
-		return (0);
-	i = ft_strlen(s1) + ft_strlen(s2);
-	strjoin = malloc(sizeof(char) * (i + 1));
-	if (!strjoin)
-		return (0);
-	ft_strlcpy(strjoin, s1, i + 1);
-	ft_strlcat(strjoin, s2, i + 1);
-	return (strjoin);
+	if (!s)
+		return (NULL);
+	if (c == 0)
+	{
+		i = ft_strlen((char *)s);
+		return (&s[i]);
+	}
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char) c)
+			return (&s[i]);
+		i++;
+	}
+	return (NULL);
+}
+
+char	*ft_strjoin(char *start, char *buff)
+{
+	char	*ptr;
+
+	if (!start)
+	{
+		start = (char *)malloc(1 * sizeof(char));
+		start[0] = '\0';
+	}
+	if (!start || !buff)
+		return (NULL);
+	ptr = (char *)malloc(1 + ft_strlen(start) + ft_strlen(buff) * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	ptr = ft_join(ptr, start, buff);
+	free(start);
+	return (ptr);
 }
 
 char	*ft_join(char *dest, char *s1, char *s2)
@@ -67,6 +75,7 @@ char	*ft_join(char *dest, char *s1, char *s2)
 		dest[i] = s1[i];
 		i++;
 	}
+	j = 0;
 	while (s2 && s2[j])
 	{
 		dest[i + j] = s2[j];
