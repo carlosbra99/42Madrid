@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:38:00 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/11/21 19:53:43 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:34:11 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_read_line(char *str)
 		i++;
 	if (str[i] == '\n')
 		i++;
-	line = (char *)malloc(1 + i * sizeof(char));
+	line = (char *)malloc((1 + i) * sizeof(char));
 	if (!line)
 		return (NULL);
 	i = 0;
@@ -56,7 +56,7 @@ char	*ft_move_start(char *str)
 		return (NULL);
 	}
 	i += (str[i] == '\n');
-	new_buff = (char *)malloc(1 + ft_strlen(str) - i);
+	new_buff = (char *)malloc((1 + ft_strlen(str) - i) * sizeof(char));
 	if (!new_buff)
 		return (NULL);
 	j = 0;
@@ -67,7 +67,6 @@ char	*ft_move_start(char *str)
 	}
 	new_buff[j] = '\0';
 	free(str);
-	//free(new_buff);
 	return (new_buff);
 }
 
@@ -80,7 +79,7 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	fd_read = 1;
-	tmp = (char *)malloc(1 + BUFFER_SIZE * sizeof(char));
+	tmp = (char *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	if (!tmp)
 		return (NULL);
 	while (!(ft_strchr(start_str, '\n')) && fd_read != 0)
@@ -89,7 +88,7 @@ char	*get_next_line(int fd)
 		if (fd_read == -1)
 		{
 			free(tmp);
-			//free(start_str);
+			free(start_str);		
 			return (NULL);
 		}
 		tmp[fd_read] = '\0';
