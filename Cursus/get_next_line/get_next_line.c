@@ -6,12 +6,12 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 16:38:00 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/11/21 12:48:37 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:53:43 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-//#include <fnctl.h>
+#include <fcntl.h>
 
 char	*ft_read_line(char *str)
 {
@@ -37,6 +37,7 @@ char	*ft_read_line(char *str)
 	if (str[i] == '\n')
 		line[i++] = '\n';
 	line[i] = '\0';
+	//free(line);
 	return (line);
 }
 
@@ -66,6 +67,7 @@ char	*ft_move_start(char *str)
 	}
 	new_buff[j] = '\0';
 	free(str);
+	//free(new_buff);
 	return (new_buff);
 }
 
@@ -73,7 +75,7 @@ char	*get_next_line(int fd)
 {
 	char		*tmp;
 	int			fd_read;
-	static char	*start_str;
+	static char	*start_str = NULL;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
@@ -87,6 +89,7 @@ char	*get_next_line(int fd)
 		if (fd_read == -1)
 		{
 			free(tmp);
+			//free(start_str);
 			return (NULL);
 		}
 		tmp[fd_read] = '\0';
@@ -95,5 +98,7 @@ char	*get_next_line(int fd)
 	free(tmp);
 	tmp = ft_read_line(start_str);
 	start_str = ft_move_start(start_str);
+	//free(tmp);
+	//free(start_str);
 	return (tmp);
 }

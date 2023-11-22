@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 17:09:03 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/09/05 18:25:57 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/11/21 19:47:49 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_strjoin(char *start, char *buff)
 	ptr = (char *)malloc(1 + ft_strlen(start) + ft_strlen(buff) * sizeof(char));
 	if (!ptr)
 		return (NULL);
-	ptr = ft_join(ptr, start, buff);
+	ft_join(ptr, start, buff);
 	free(start);
 	return (ptr);
 }
