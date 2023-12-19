@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:07:28 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/12/19 18:31:57 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:56:12 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_putunbr(unsigned int nb)
 	if (nb > 9)
 	{
 		cont += ft_putunbr(nb / 10);
-		cont += ft_putchar(nb % 10);
+		cont += ft_putchar((nb % 10) + '0');
 	}
 	else
 		cont += ft_putchar(nb + '0');
