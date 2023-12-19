@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 11:18:24 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/12/19 18:29:52 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:49:59 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int     ft_printf_type(va_list args, const char type)
 		cont += ft_puthex_min(va_arg(args, unsigned int));
 	else if (type == 'X')
 		cont += ft_puthex_may(va_arg(args, unsigned int));
+	else if (type == '%')
+		cont += ft_putchar(type);
 	return (cont);
 }
 
