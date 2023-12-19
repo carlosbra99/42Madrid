@@ -6,26 +6,39 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:46:53 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/12/19 13:03:27 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:19:50 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putptr(unsigned long nb)
+int	ft_putptr_aux(unsigned long nb)
 {
-	char	*base;
-	int		counter;
+	int cont;
 
-	base = "0123456789abcdef";
-	counter = 0;
-	ft_putstr("0x");
+	cont = 0;
 	if (nb >= 16)
 	{
-		counter += ft_puthex(nb / 16, base);
-		counter += ft_putchar(base[nb % 16]);
+		cont += ft_putptr_aux(nb / 16);
+		cont += ft_putptr_aux(nb % 16);
 	}
 	else
-		counter += ft_putchar(base[nb]);
-	return (counter);
+	{
+		if (nb < 10)
+			cont += ft_putchar(nb + 48);
+		else
+			cont += ft_putchar(nb - 10 + 'a');
+	}
+	return (cont);
+}
+
+int	ft_putptr(int *ptr)
+{
+	int cont;
+
+	cont = 2;
+	ft_putchar('0');
+	ft_putchar('x');
+	cont += ft_putptr_aux((unsigned long)ptr);
+	return (cont);
 }

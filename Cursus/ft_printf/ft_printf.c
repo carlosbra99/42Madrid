@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 11:18:24 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/12/19 13:02:17 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:29:52 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int     ft_printf_type(va_list args, const char type)
 	else if (type == 's')
 		cont += ft_putstr(va_arg(args, char *));
 	else if (type == 'p')
-		cont += ft_putptr(va_arg(args, unsigned long));
+		cont += ft_putptr(va_arg(args, int *));
 	else if (type == 'd')
 		cont += ft_putnbr(va_arg(args, int));
     else if (type == 'i')
@@ -30,13 +30,9 @@ int     ft_printf_type(va_list args, const char type)
 	else if (type == 'u')
 		cont += ft_putunbr(va_arg(args, unsigned int));
 	else if (type == 'x')
-		cont += ft_puthex(va_arg(args, unsigned int),
-				"0123456789abcdef");
+		cont += ft_puthex_min(va_arg(args, unsigned int));
 	else if (type == 'X')
-		cont += ft_puthex(va_arg(args, unsigned int),
-				"0123456789ABCDEF");
-	else if (type == '%')
-		cont += ft_putchar(type);
+		cont += ft_puthex_may(va_arg(args, unsigned int));
 	return (cont);
 }
 
@@ -44,18 +40,24 @@ int	ft_printf(const char *str, ...)
 {
     va_list args;
     int     cont;
+	int		i;
 
 	cont = 0;
+	i = 0;
 	va_start(args, str);
-	while (*str)
+	while (str[i])
 	{
-        if (*str == '%')
+        if (str[i] == '%')
 		{
-			str++;
-			cont += ft_printf_type(args, *str++);
+			i++;
+			if (str[i] == '%')
+				cont += write(1, "%%", 1);
+			else
+				cont += ft_printf_type(args, str[i]);
 		}
 		else
-			cont += ft_putchar(*str++);   
+			cont += write(1, &str[i], 1);
+		i++;   
     }
     va_end(args);
     return (cont);

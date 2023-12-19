@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:07:28 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/12/19 13:36:38 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:13:36 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,41 @@
 
 int	ft_putnbr(int nb)
 {
-	unsigned int	num;
 	int 			cont;
 
-	num = nb;
 	cont = 0;
-	if (nb < 0)
+	if (nb == -2147483648 || nb == INT_MIN)
 	{
-		num *= -1;
-		cont += ft_putchar('-');
+		cont += write(1, "-2", 2);
+		cont += ft_putnbr(147483648);
 	}
-	if (nb > 9)
+	else if (nb < 0)
 	{
-		cont += ft_putnbr(num / 10);
-		cont += ft_putchar((num % 10) + '0');
+		cont += write(1, '-', 1);
+		nb = -nb;
+		cont += ft_putnbr(nb);
+	}
+	else if (nb > 9)
+	{
+		cont += ft_putnbr(nb / 10);
+		cont += ft_putnbr(nb % 10);
 	}
 	else
-		cont += ft_putchar(num + '0');
+		cont += ft_putchar(nb + '0');
 	return (cont);
 }
 
 int	ft_putunbr(unsigned int nb)
 {
-	unsigned int	num;
 	int				cont;
 
-	num = nb;
 	cont = 0;
 	if (nb > 9)
 	{
-		cont += ft_putunbr(num / 10);
-		cont += ft_putchar((num % 10) + '0');
+		cont += ft_putunbr(nb / 10);
+		cont += ft_putchar(nb % 10);
 	}
 	else
-		cont += ft_putchar(num + '0');
+		cont += ft_putchar(nb + '0');
 	return (cont);
 }

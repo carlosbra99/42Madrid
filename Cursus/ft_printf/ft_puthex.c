@@ -6,23 +6,48 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:08:38 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/12/19 13:04:20 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:00:35 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned long nb, char *base)
+int	ft_puthex_min(unsigned int nb)
 {
-	int	counter;
+	int	cont;
 
-	counter = 0;
+	cont = 0;
 	if (nb >= 16)
 	{
-		counter += ft_puthex(nb / 16, base);
-		counter += ft_putchar(base[nb % 16]);
+		cont += ft_puthex_min(nb / 16);
+		cont += ft_puthex_min(nb % 16);
 	}
 	else
-		counter += ft_putchar(base[nb]);
-	return (counter);
+	{
+		if (nb < 10)
+			cont += ft_putchar(nb + 48);
+		else
+			cont += ft_putchar(nb +- 10 + 'a');
+	}
+	return (cont);
+}
+
+int	ft_puthex_may(unsigned int nb)
+{
+	int	cont;
+
+	cont = 0;
+	if (nb >= 16)
+	{
+		cont += ft_puthex_may(nb / 16);
+		cont += ft_puthex_may(nb % 16);
+	}
+	else
+	{
+		if (nb < 10)
+			cont += ft_putchar(nb + 48);
+		else
+			cont += ft_putchar(nb +- 10 + 'A');
+	}
+	return (cont);
 }

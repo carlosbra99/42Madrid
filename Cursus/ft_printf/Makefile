@@ -1,10 +1,11 @@
+NAME = libftprintf.a
+
 RM = rm -f
 AR = ar -crs
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-NAME = libftprintf.a
 MY_SOURCES = ft_printf.c \
 				ft_putnbr.c \
 				ft_putptr.c \
