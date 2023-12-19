@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:07:28 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/12/19 18:13:36 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:31:57 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putnbr(int nb)
 	}
 	else if (nb < 0)
 	{
-		cont += write(1, '-', 1);
+		cont += write(1, "-", 1);
 		nb = -nb;
 		cont += ft_putnbr(nb);
 	}
