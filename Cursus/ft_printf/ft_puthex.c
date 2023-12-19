@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:08:38 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/12/19 18:00:35 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/12/19 19:05:19 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_puthex_min(unsigned int nb)
 		if (nb < 10)
 			cont += ft_putchar(nb + 48);
 		else
-			cont += ft_putchar(nb +- 10 + 'a');
+			cont += ft_putchar(nb - 10 + 'a');
 	}
 	return (cont);
 }
@@ -47,7 +47,7 @@ int	ft_puthex_may(unsigned int nb)
 		if (nb < 10)
 			cont += ft_putchar(nb + 48);
 		else
-			cont += ft_putchar(nb +- 10 + 'A');
+			cont += ft_putchar(nb - 10 + 'A');
 	}
 	return (cont);
 }

@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/19 11:46:53 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/12/19 18:19:50 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2023/12/19 19:06:15 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putptr_aux(unsigned long nb)
 {
-	int cont;
+	int	cont;
 
 	cont = 0;
 	if (nb >= 16)
@@ -34,7 +34,7 @@ int	ft_putptr_aux(unsigned long nb)
 
 int	ft_putptr(int *ptr)
 {
-	int cont;
+	int	cont;
 
 	cont = 2;
 	ft_putchar('0');
