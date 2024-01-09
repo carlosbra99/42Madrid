@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 13:06:16 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/01/09 12:02:43 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:10:23 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <string.h>
 # include "./libft/libft.h"
 
-void    closefds(int    pipefds[2]);
+void    close_fds(int    pipefds[2]);
 int     ft_strichr(char *str, char c);
 char    *ft_strndup(char *str, unsigned int n);
 void    free_mat(char **mat);

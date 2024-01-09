@@ -6,13 +6,13 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:13:35 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/01/09 11:55:02 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/01/09 13:10:00 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pipex.h"
 
-void    closefds(int    pipefds[2])
+void    close_fds(int    pipefds[2])
 {
     close(pipefds[0]);
     close(pipefds[1]);
