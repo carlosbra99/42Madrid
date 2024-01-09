@@ -6,70 +6,138 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:18:04 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/22 11:58:34 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:24:12 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_counter(const char *str, char c)
+int	nmbr_of_words(char const *s, char c)
 {
+	int	count;
 	int	i;
-	int	trigger;
 
+	count = 0;
 	i = 0;
-	trigger = 0;
-	while (*str)
+	if (!s)
+		return (0);
+	while (s[i])
 	{
-		if (*str != c && trigger == 0)
+		if (s[i] != c)
 		{
-			trigger = 1;
-			i++;
+			while (s[i] != c && s[i])
+				i++;
+			count += 1;
 		}
-		else if (*str == c)
-			trigger = 0;
-		str++;
+		else
+			i++;
 	}
-	return (i);
+	return (count);
 }
 
-static char	*double_word(const char *str, int start, int finish)
+char	*allocate_word(char *s, char c, int *start)
 {
-	char	*word;
+	int		length;
+	char	*result;
 	int		i;
 
+	length = 0;
+	while (s[*start] == c)
+		(*start)++;
+	while (s[*start + length] != c && s[*start + length])
+		length++;
+	if (length <= 0)
+		return (NULL);
+	result = (char *)ft_calloc(length + 1, sizeof(char));
+	if (!result)
+		return (NULL);
 	i = 0;
-	word = malloc((finish - start + 1) * sizeof(char));
-	while (start < finish)
-		word[i++] = str[start++];
-	word[i] = '\0';
-	return (word);
+	while (i < length)
+	{
+		result[i] = s[*start + i];
+		i++;
+	}
+	*start += length + 1;
+	return (result);
+}
+
+char	**ft_words_length_allocate(char *s, char c, int size)
+{
+	int		i;
+	int		start;
+	char	**result;
+
+	i = 0;
+	start = 0;
+	result = (char **)ft_calloc(size + 1, sizeof(char *));
+	if (!s || !result)
+		return (NULL);
+	while (i < size)
+	{
+		result[i] = allocate_word(s, c, &start);
+		if (!result[i])
+		{
+			while (i >= 0)
+			{
+				free(result[i]);
+				i--;
+			}
+			free(result);
+			return (NULL);
+		}
+		i++;
+	}
+	return (result);
+}
+
+void	chars_into_result(char *s, char c, char **array)
+{
+	int	i;
+	int	x;
+	int	j;
+
+	x = 0;
+	j = 0;
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			array[x][j] = s[i];
+			j++;
+			if (s[i + 1] == c || s[i + 1] == '\0')
+			{
+				array[x][j] = '\0';
+				x++;
+				j = 0;
+			}
+		}
+		i++;
+	}
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
-	char	**split;
+	char	**result;
+	int		nmbr_words;
 
-	split = malloc((word_counter(s, c) + 1) * sizeof(char *));
-	if (!s || !(split))
-		return (0);
-	i = 0;
-	j = 0;
-	index = -1;
-	while (i <= ft_strlen(s))
+	if (!s)
+		return (NULL);
+	nmbr_words = nmbr_of_words(s, c);
+	if (!nmbr_words)
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split[j++] = double_word(s, index, i);
-			index = -1;
-		}
-		i++;
+		result = (char **)malloc(sizeof(char *));
+		if (!result)
+			free(result);
+		else
+			result[0] = NULL;
+		return (result);
 	}
-	split[j] = 0;
-	return (split);
+	result = ft_words_length_allocate((char *)s, c, nmbr_words);
+	if (!result)
+		return (NULL);
+	chars_into_result((char *)s, c, result);
+	return (result);
 }
