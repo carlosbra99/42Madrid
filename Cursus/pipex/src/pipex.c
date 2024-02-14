@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:13:18 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/01/09 14:00:01 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/02/14 11:10:19 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	exec(char *cmd, char **envp)
 		exit(127);
 	}
 	if (execve(path, cmdargs, envp) == -1)
-	{	
+	{
 		free_mat(cmdargs);
 		perror("pipex");
 		exit(127);
@@ -95,7 +95,7 @@ int	main(int argc, char **argv, char **envp)
 	}
 	f2 = open(argv[4], O_CREAT | O_RDWR | O_TRUNC, 0644);
 	if (f2 < 0)
-	{	
+	{
 		close(f1);
 		perror(argv[4]);
 		exit(1);

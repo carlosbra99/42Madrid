@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:17:53 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/01/09 13:59:54 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/02/14 11:09:48 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*get_env_path(char **envp)
 
 	i = 0;
 	while (envp[i])
-	{	
+	{
 		if (ft_strncmp("PATH=", envp[i], 5) == 0)
 			return (envp[i] + 5);
 		i++;
