@@ -8,7 +8,7 @@ HANDLE_MOREARGS_DIR = ./handle-more-args
 RADIX_DIR = ./radix-sort
 LIBFT_INC = $(LIBFT_DIR)/libft.h
 
-SRCS = $(SRCS_DIR)/push_swap.c $(SRCS_DIR)/ps_algorithms.c $(SRCS_DIR)/ps_algorithms_two.c $(SRCS_DIR)/utils.c \
+SRCS = $(SRCS_DIR)/push_swap.c $(SRCS_DIR)/ps_algorithms.c $(SRCS_DIR)/ps_algorithms2.c $(SRCS_DIR)/utils.c \
 			$(HANDLE_ALGOS_DIR)/handle_two.c $(HANDLE_ALGOS_DIR)/handle_three.c $(HANDLE_ALGOS_DIR)/handle_fourfive.c $(HANDLE_ALGOS_DIR)/find_max_min.c \
 			$(RADIX_DIR)/start.c $(RADIX_DIR)/to_positive.c  $(SRCS_DIR)/initialize_stack.c $(SRCS_DIR)/checks.c $(SRCS_DIR)/ft_atoi_err.c $(HANDLE_ALGOS_DIR)/handle_four_five_two.c \
 

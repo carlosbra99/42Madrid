@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 09:34:44 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/03/11 09:54:28 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:45:16 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int check_add(char *str, t_list **stack, int i)
     nbr = ft_atoi_err(str, &err);
     if (!ft_checks(str) || !err)
         return (0);
-    new = ft_lstnew_bonus(nbr, i);
+    new = ft_lstnew(nbr, i);
     ft_lstadd_back(stack, new);
     return (1);
 }

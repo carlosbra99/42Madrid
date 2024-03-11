@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:07:16 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/03/11 16:38:23 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:46:27 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void    first_steps(int argc, t_list **stack_a, t_list **stack_b)
 
 void    pushing_big(t_list **stack_a, t_list **stack_b)
 {
-    t_list	*head_a;
+    //t_list	*head_a;
 	t_list	*head_b;
 
-	head_a = *stack_a;
+	//head_a = *stack_a;
 	head_b = *stack_b;
 	if (is_bigger_than_stack(head_b->content, stack_a))
 	{

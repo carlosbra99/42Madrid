@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 11:07:02 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/03/11 16:36:19 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:42:25 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void    push_max_or_min(t_list **stack_a, t_list **stack_b)
 {
-    t_list	*head_a;
+    //t_list	*head_a;
 	t_list	*head_b;
 
-	head_a = *stack_a;
+	//head_a = *stack_a;
 	head_b = *stack_b;
 	while (head_b)
 	{
@@ -79,12 +79,12 @@ void    to_stack_a(t_list **stack_a, t_list **stack_b)
 
 void    handle_fourfive_args(int argc, t_list **stack_a, t_list **stack_b)
 {
-    t_list	*head_a;
+    //t_list	*head_a;
 	t_list	*head_b;
 
 	first_steps(argc, stack_a, stack_b);
 	push_max_or_min(stack_a, stack_b);
-	head_a = *stack_a;
+	//head_a = *stack_a;
 	head_b = *stack_b;
 	if (*stack_b)
 	{
