@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 16:49:30 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/22 11:20:28 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/02/07 16:41:11 by cbravo-a          #+#    #+#             */
+/*   Updated: 2024/03/11 17:17:00 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../push_swap.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!del)
-		return ;
+	t_list	*ult;
+
 	if (lst)
 	{
-		(*del)(lst->content);
-		free(lst);
+		if (*lst)
+		{
+			ult = ft_lstlast(*lst);
+			ult->next = new;
+		}
+		else
+			*lst = new;
 	}
 }

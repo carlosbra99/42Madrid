@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 17:43:50 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/22 11:57:09 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/02/07 16:00:22 by cbravo-a          #+#    #+#             */
+/*   Updated: 2024/03/11 17:17:39 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstnew(int content, int index)
 {
-	t_list	*first;
-	t_list	*new;
+	t_list	*head;
 
-	if (!f || !del)
-		return (NULL);
-	first = NULL;
-	while (lst)
+	head = (t_list *)malloc(sizeof(*head));
+	if (head == 0)
 	{
-		new = ft_lstnew(f(lst->content));
-		if (!new)
-		{
-			while (first)
-			{
-				new = first->next;
-				(*del)(first->content);
-				free(first);
-				first = new;
-			}
-			lst = NULL;
-			return (NULL);
-		}
-		ft_lstadd_back(&first, new);
-		lst = lst->next;
+		free(head);
+		return (NULL);
 	}
-	return (first);
+	head->index = index;
+	head->content = content;
+	head->p_content = 0;
+	head->next = NULL;
+	return (head);
 }

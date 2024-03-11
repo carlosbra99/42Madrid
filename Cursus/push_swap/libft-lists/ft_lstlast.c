@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 16:00:22 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/22 11:21:15 by cbravo-a         ###   ########.fr       */
+/*   Created: 2023/02/07 16:35:57 by cbravo-a          #+#    #+#             */
+/*   Updated: 2024/03/11 17:17:10 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*nodo;
-
-	nodo = (t_list *)malloc(sizeof(t_list));
-	if (nodo == 0)
-		return (NULL);
-	nodo->content = content;
-	nodo->next = NULL;
-	return (nodo);
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
+		lst = lst->next;
+	}
+	return (lst);
 }

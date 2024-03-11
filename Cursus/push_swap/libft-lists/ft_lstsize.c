@@ -6,11 +6,12 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 16:31:53 by cbravo-a          #+#    #+#             */
-/*   Updated: 2023/02/22 11:19:50 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/03/11 17:17:41 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../push_swap.h"
 
 int	ft_lstsize(t_list *lst)
 {
