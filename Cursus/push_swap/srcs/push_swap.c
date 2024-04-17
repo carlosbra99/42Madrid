@@ -5,75 +5,109 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 10:27:51 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/03/11 16:42:40 by cbravo-a         ###   ########.fr       */
+/*   Created: 2024/04/17 13:45:26 by cbravo-a          #+#    #+#             */
+/*   Updated: 2024/04/17 14:41:50 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
-void    handle_algos_depend_len(t_list **stack_a, t_list **stack_b)
+static void	groups_to_b(int argc, long int ***stack_a, long int **stack_b)
 {
-    int		len;
+	int		group_len;
 
-	len = stack_len(stack_a);
-	if (len == 2)
-		handle_twoargs(stack_a);
-	else if (len == 3)
-		handle_threeargs(stack_a);
-	else if (len == 4 || len == 5)
-		handle_fourfive_args(len, stack_a, stack_b);
-	else if (len >= 6)
-		handle_more_args(stack_a, stack_b);
+	group_len = 0;
+	while (!check_end_sort_a(stack_a))
+	{
+		group_len = get_next_group_len(argc, group_len);
+		while (!check_end_group(stack_a, group_len))
+		{
+			if (stack_a[0][0][0] <= group_len)
+				push_b(&stack_a, &stack_b);
+			else
+				rotate_stack(&stack_a);
+		}
+	}
 }
 
-void    free_stacks(t_list **stack_a, t_list **stack_b)
+static void	sort_five(long int ***stack_a, long int **stack_b)
 {
-    t_list	*head_a;
-	t_list	*next;
+	int	min;
+	int	min_pos;
+	int	st_len;
 
-	head_a = (*stack_a);
-	while (head_a != NULL)
-	{	
-		next = head_a->next;
-		free(head_a);
-		head_a = next;
+	st_len = 5;
+	while (st_len > 3)
+	{
+		min = get_min_stack(stack_a, &min_pos);
+		if (stack_a[0][0][0] == min)
+			push_b(&stack_a, &stack_b);
+		else if (stack_a[0][0][1] <= INT_MAX)
+		{
+			if (min_pos <= st_len / 2)
+				rotate_stack(&stack_a);
+			else
+				reverse_rotate_stack(&stack_a);
+		}
+		st_len = stack_len(&stack_a);
 	}
-	free(stack_a);
-	head_a = (*stack_b);
-	while (head_a != NULL)
-	{	
-		next = head_a->next;
-		free(head_a);
-		head_a = next;
+}
+
+static void	sort_short(long int ***stack_a)
+{
+	int	max_pos;
+	int	max;
+
+	while (!check_end_sort_a(stack_a))
+	{
+		max = get_max_stack(stack_a, &max_pos);
+		if (stack_a[0][0][0] == max)
+			rotate_stack(&stack_a);
+		else
+			swap(&stack_a);
 	}
+}
+
+static void	push_swap(int argc, long int **stack_a)
+{
+	long int	*stack_b;
+	int			i;
+
+	argc = stack_len_b(&stack_a) + 1;
+	stack_b = (long int *)ft_calloc(argc, sizeof(long int));
+	if (!stack_b)
+		error_exit();
+	stack_b[argc - 1] = (long int) INT_MAX + 2;
+	i = -1;
+	while (stack_b[++i] <= INT_MAX)
+		stack_b[i] = (long int) INT_MAX + 2;
+	stack_a[0] = map_stack_a(argc, stack_a);
+	if (argc <= 4)
+		sort_short(&stack_a);
+	else if (argc <= 6)
+	{
+		sort_five(&stack_a, &stack_b);
+		sort_short(&stack_a);
+	}
+	else
+		groups_to_b(argc, &stack_a, &stack_b);
+	reverse_array_b(&stack_b);
+	push_to_a(&stack_a, &stack_b);
 	free(stack_b);
+	return ;
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_list	**stack_a;
-	t_list	**stack_b;
+	long int	*stack_a;
 
-	if (argc == 1)
+	if (argc <= 1)
 		return (0);
-	stack_a = (t_list **)malloc(sizeof(t_list *));
-	stack_b = (t_list **)malloc(sizeof(t_list *));
-	*stack_a = NULL;
-	*stack_b = NULL;
-	if (!initialize_stack(stack_a, argc, argv))
-	{
-		free_stacks(stack_a, stack_b);
-		return (write(2, "Error\n", 6), 0);
-	}
-	if (check_duplicate(stack_a))
-	{
-		free_stacks(stack_a, stack_b);
-		return (write(2, "Error\n", 6), 0);
-	}
-	if (check_swapnoprint(stack_a))
-		return (free_stacks(stack_a, stack_b), 0);
-	handle_algos_depend_len(stack_a, stack_b);
-	free_stacks(stack_a, stack_b);
+	else if (argc == 2)
+		stack_a = check_one_argv(argc, argv);
+	else
+		stack_a = check_argv(argc, argv);
+	push_swap(argc, &stack_a);
+	free(stack_a);
 	return (0);
 }
