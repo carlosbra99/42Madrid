@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:49:46 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 14:02:02 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:45:43 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ long int	*check_duplicate_order_one(int argc, char **argv)
 		}
 		++i;
 	}
-	free_matrix(split_argv);
 	check_arg_order(argc, &stack);
 	return (stack);
 }

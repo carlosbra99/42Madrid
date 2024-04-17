@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:45:26 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 14:02:48 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:41:50 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ static void	groups_to_b(int argc, long int ***stack_a, long int **stack_b)
 		group_len = get_next_group_len(argc, group_len);
 		while (!check_end_group(stack_a, group_len))
 		{
-				if (stack_a[0][0][0] <= group_len)
-					push_b(&stack_a, &stack_b);
-				else
-					rotate_stack(&stack_a);
+			if (stack_a[0][0][0] <= group_len)
+				push_b(&stack_a, &stack_b);
+			else
+				rotate_stack(&stack_a);
 		}
 	}
 }
