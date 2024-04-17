@@ -6,11 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:45:26 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 13:48:03 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:02:48 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static void	groups_to_b(int argc, long int ***stack_a, long int **stack_b)
 {

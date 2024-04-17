@@ -6,11 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:51:48 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 13:51:57 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:02:21 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	swap(long int ****stack)
 {

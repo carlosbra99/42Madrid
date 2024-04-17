@@ -6,11 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:49:46 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 13:50:01 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:02:02 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	ft_argv_size(const char *s)
 {

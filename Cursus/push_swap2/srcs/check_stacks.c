@@ -6,11 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:50:41 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 13:50:50 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:01:46 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 bool	check_end_sort_a(long int ***stack)
 {

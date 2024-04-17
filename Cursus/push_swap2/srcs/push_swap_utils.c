@@ -6,11 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:52:51 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 13:53:03 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:02:43 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	ft_bzero(void *s, size_t n)
 {

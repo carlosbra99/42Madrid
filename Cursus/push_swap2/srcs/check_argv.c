@@ -6,11 +6,11 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:48:59 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 13:49:19 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/17 14:02:07 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	free_matrix(char **matrix)
 {
