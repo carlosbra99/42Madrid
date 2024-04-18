@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:45:26 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 14:41:50 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:08:21 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,10 +97,16 @@ static void	push_swap(int argc, long int **stack_a)
 	return ;
 }
 
+void	leaks(void)
+{
+	system("leaks -q push_swap");
+}
+
 int	main(int argc, char **argv)
 {
 	long int	*stack_a;
 
+	//atexit(leaks);
 	if (argc <= 1)
 		return (0);
 	else if (argc == 2)

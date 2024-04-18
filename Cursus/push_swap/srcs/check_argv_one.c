@@ -6,7 +6,7 @@
 /*   By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:49:46 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/04/17 14:45:43 by cbravo-a         ###   ########.fr       */
+/*   Updated: 2024/04/18 12:07:37 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,32 @@ long int	*check_duplicate_order_one(int argc, char **argv)
 long int	*check_one_argv(int argc, char **argv)
 {
 	long int	*stack;
+	int			i;
+	int			j;
+	char		**spl;
 
+	i = 0;
+	j = 0;
+	spl = ft_split(argv[1], ' ');
+	if (!spl[0])
+		error_exit();
+	while (spl[i])
+	{
+		while (spl[i][j])
+		{
+			if (!ft_isdigit((int)(spl[i][j])) && (spl[i][j] != '+' && spl[i][j] != '-'))
+				error_exit();
+			if ((spl[i][j] == '+' || spl[i][j] == '-') && (!ft_isdigit((int)(spl[i][j + 1]))))
+				error_exit();
+			if (ft_isdigit(spl[i][j]) && !ft_isdigit(spl[i][j + 1]) && spl[i][j + 1])
+				error_exit();
+			j++;
+		}
+		free (spl[i]);
+		j = 0;	
+		i++;
+	}
+	free (spl);
 	stack = check_duplicate_order_one(argc, argv);
 	return (stack);
 }
