@@ -6,7 +6,7 @@ OBJ_DIR			= obj/
 
 SRC				= push_swap.c check_argv.c check_stacks.c get_num_stacks.c \
 					operations_1.c operations_2.c push_swap_utils.c \
-					push_swap_utils_2.c check_argv_one.c split_argv.c
+					push_swap_utils_2.c check_argv_one.c split_argv.c check_argv_one_utils.c
 
 SRCS			= $(addprefix $(SRC_DIR), $(SRC))
 

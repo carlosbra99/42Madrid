@@ -108,18 +108,9 @@ long int	*check_one_argv(int argc, char **argv)
 		error_exit();
 	while (spl[i])
 	{
-		while (spl[i][j])
-		{
-			if (!ft_isdigit((int)(spl[i][j])) && (spl[i][j] != '+' && spl[i][j] != '-'))
-				error_exit();
-			if ((spl[i][j] == '+' || spl[i][j] == '-') && (!ft_isdigit((int)(spl[i][j + 1]))))
-				error_exit();
-			if (ft_isdigit(spl[i][j]) && !ft_isdigit(spl[i][j + 1]) && spl[i][j + 1])
-				error_exit();
-			j++;
-		}
+		check_one_argv_loop(spl, i, j);
 		free (spl[i]);
-		j = 0;	
+		j = 0;
 		i++;
 	}
 	free (spl);

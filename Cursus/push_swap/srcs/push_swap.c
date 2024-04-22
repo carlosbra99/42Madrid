@@ -97,16 +97,10 @@ static void	push_swap(int argc, long int **stack_a)
 	return ;
 }
 
-void	leaks(void)
-{
-	system("leaks -q push_swap");
-}
-
 int	main(int argc, char **argv)
 {
 	long int	*stack_a;
 
-	//atexit(leaks);
 	if (argc <= 1)
 		return (0);
 	else if (argc == 2)

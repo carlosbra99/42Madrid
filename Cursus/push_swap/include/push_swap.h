@@ -59,5 +59,6 @@ size_t		ft_strlen(const char *s);
 int			ft_argv_size(const char *s);
 char		**ft_split(char *s, char c);
 void		free_matrix(char **matrix);
+void		check_one_argv_loop(char **spl, int i, int j);
 
 #endif
