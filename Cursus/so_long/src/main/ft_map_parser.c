@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_map_parser.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 16:56:44 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/07/13 17:58:42 by carlos           ###   ########.fr       */
+/*   Created: 2024/07/13 17:53:36 by carlos            #+#    #+#             */
+/*   Updated: 2024/07/13 17:53:50 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
-#include <mlx.h>
 #include <libft.h>
-#include <stdbool.h>
 
-int	main(int argc, char **argv)
+t_map	*ft_map_parser(char *filename)
 {
 	t_map	*map;
-	t_game	*game;
 
-	if (argc != 2 || !ft_valid_input(argv[1]))
-		ft_how_to_use(argc);
-	map = ft_map_parser(argv[1]);
-	game = ft_initialize_game(map);
-	ft_render_game(game);
-	ft_free_game(game);
-	return (0);
+	map = NULL;
+	map = ft_initialize_map(map, filename);
+	if (!map)
+		ft_exit_program(INVALID_MAP, NO_MAP, NO_GAME);
+	ft_map_valid(map);
+	return (map);
 }

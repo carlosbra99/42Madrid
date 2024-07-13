@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   ft_render_game.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 16:56:44 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/07/13 17:58:42 by carlos           ###   ########.fr       */
+/*   Created: 2024/07/13 17:55:55 by carlos            #+#    #+#             */
+/*   Updated: 2024/07/13 17:57:13 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <so_long.h>
-#include <mlx.h>
 #include <libft.h>
+#include <mlx.h>
 #include <stdbool.h>
 
-int	main(int argc, char **argv)
+void	ft_render_game(t_game *game)
 {
-	t_map	*map;
-	t_game	*game;
-
-	if (argc != 2 || !ft_valid_input(argv[1]))
-		ft_how_to_use(argc);
-	map = ft_map_parser(argv[1]);
-	game = ft_initialize_game(map);
-	ft_render_game(game);
-	ft_free_game(game);
-	return (0);
+	game->mlx = mlx_init();
+	game->window = mlx_new_window(game->mlx, game->win_width,
+			game->win_height, "so_long");
+	ft_render_map(game);
+	mlx_key_hook(game->window, ft_move_player, game);
+	mlx_hook(game->window, ON_DESTROY, 0, ft_close_game, game);
+	mlx_loop(game->mlx);
 }

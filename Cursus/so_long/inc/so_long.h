@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 12:06:12 by carlos            #+#    #+#             */
-/*   Updated: 2024/07/13 12:35:22 by carlos           ###   ########.fr       */
+/*   Updated: 2024/07/13 17:51:46 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,42 @@ typedef struct s_game
 # define ERROR_LIST "The enemies list initialization failed\n"
 
 /* --PROTOTYPES-- */
+void		ft_free_array(char **arr);
+void		ft_how_to_use(int count);
+void		ft_free_map(t_map *map);
+void		ft_print_error(char *error);
+void		ft_game_won(t_game *game);
+void		ft_free_game(t_game *game);
+void		ft_game_over(t_game *game);
+void		ft_render_exit(t_game *game);
+void		ft_render_map(t_game *game);
+void		ft_render_game(t_game *game);
+void		ft_render_player(t_game *game);
+void		ft_steps_to_window(t_game *game);
+void		ft_render_floor(t_game *game, t_position *pos);
+void		ft_render_floor_2(t_game *game, void *img, int y, int x);
+void		ft_exit_program(char *error_msg, t_map *map, t_game *game);
+void		ft_player_move_up_2(t_game *game, t_position *player, void *img);
+void		ft_player_move_left_2(t_game *game, t_position *player, void *img);
+void		ft_player_move_right_2(t_game *game, t_position *player, void *img);
+void		ft_player_move_down_2(t_game *game, t_position *player, void *img);
+
+ssize_t		ft_nbr_lines(char *filename);
+
+int			ft_valid_input(char *str);
+int			ft_map_valid(t_map *map);
+int			ft_count_items(t_map *map);
+int			ft_close_game(t_game *game);
+int			ft_invalid_elements(t_map *map);
+int			ft_missing_valid_path(t_map *map);
+int			ft_move_player(int keycode, t_game *game);
+
+t_map		*ft_map_parser(char *filename);
+t_map		*ft_initialize_map(t_map *map, char *filename);
+
+t_game		*ft_initialize_game(t_map *map);
+
+t_position	*ft_initialize_position(t_map *map, int search);
+t_position	*ft_initialize_defined_pos(t_game *game, int y, int x);
 
 #endif
