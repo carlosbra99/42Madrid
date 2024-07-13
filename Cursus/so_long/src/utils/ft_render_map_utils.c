@@ -1,20 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_utils.c                                      :+:      :+:    :+:   */
+/*   ft_render_map_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 16:58:09 by cbravo-a          #+#    #+#             */
-/*   Updated: 2024/07/13 12:24:58 by carlos           ###   ########.fr       */
+/*   Created: 2024/07/13 12:28:13 by carlos            #+#    #+#             */
+/*   Updated: 2024/07/13 12:28:14 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <so_long.h>
-
-void    ft_print_error(char *error)
-{
-    write(2, "Error\n", 6);
-    write(2, error, ft_strlen(error));
-}
