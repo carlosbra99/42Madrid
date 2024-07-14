@@ -66,4 +66,9 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+norm:
+    norminette lib/libft
+    norminette src
+    @echo "\nNorminette passed ✓ \n"
+
+.PHONY: all clean fclean re norm
