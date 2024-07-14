@@ -3,79 +3,64 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cbravo-a <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: carlos <carlos@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/24 17:33:28 by cbravo-a          #+#    #+#              #
-#    Updated: 2023/02/14 14:03:03 by cbravo-a         ###   ########.fr        #
+#    Updated: 2024/07/14 16:02:19 by carlos           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+#	COLOURS	#
+
+GREEN = \033[0:32m
+COLOR_OFF = \033[0m
+
+#	VARIABLES	#
+
 NAME = libft.a
-MY_SOURCES = ft_isalpha.c \
-						ft_isdigit.c  \
-						ft_isalnum.c \
-						ft_bzero.c \
-						ft_memset.c \
-						ft_strlen.c \
-						ft_isprint.c \
-						ft_isascii.c \
-						ft_memcpy.c \
-						ft_memmove.c \
-						ft_strncmp.c \
-						ft_toupper.c \
-						ft_tolower.c \
-						ft_strchr.c \
-						ft_strlcpy.c \
-						ft_strnstr.c \
-						ft_atoi.c \
-						ft_memchr.c \
-						ft_strrchr.c \
-						ft_strlcat.c \
-						ft_calloc.c \
-						ft_strdup.c \
-						ft_memcmp.c \
-						ft_putchar_fd.c \
-						ft_putendl_fd.c \
-						ft_putnbr_fd.c \
-						ft_putstr_fd.c \
-						ft_substr.c \
-						ft_strjoin.c \
-						ft_strtrim.c \
-						ft_itoa.c \
-						ft_strmapi.c \
-						ft_striteri.c \
-						ft_split.c
 
-MY_BONUS = ft_lstnew_bonus.c \
-						ft_lstadd_front_bonus.c \
-						ft_lstsize_bonus.c \
-						ft_lstlast_bonus.c \
-						ft_lstadd_back_bonus.c \
-						ft_lstdelone_bonus.c \
-						ft_lstclear_bonus.c \
-						ft_lstiter_bonus.c \
-						ft_lstmap_bonus.c 
-						
-MY_OBJECTS = $(MY_SOURCES:.c=.o)
-BONUS_OBJECTS = $(MY_BONUS:.c=.o)
+SRC = ft_atoi.c ft_itoa.c ft_split.c ft_lstiter.c ft_bzero.c ft_strlen.c ft_strchr.c \
+					ft_calloc.c ft_isdigit.c ft_lstlast.c ft_lstsize.c ft_isascii.c ft_substr.c \
+					ft_strjoin.c ft_isprint.c ft_strdup.c ft_lstnew.c ft_strlcat.c ft_strnstr.c \
+					ft_strrchr.c ft_striteri.c ft_lstmap.c ft_strlcpy.c ft_strtrim.c ft_isalpha.c \
+					ft_tolower.c ft_lstclear.c ft_strmapi.c ft_toupper.c ft_isalnum.c ft_memset.c \
+					ft_memchr.c ft_strncmp.c ft_memcpy.c ft_lstdelone.c ft_memcmp.c ft_putstr_fd.c \
+					ft_putnbr_fd.c ft_memmove.c ft_putendl_fd.c ft_putchar_fd.c ft_lstadd_back.c ft_lstadd_front.c \
+					ft_printf.c ft_printf_utils.c print_char_utils.c print_nbr_utils.c print_ptr_utils.c \
+					get_next_line.c get_next_line_utils.c
+
+INCLUDE = include/
+
+SRC_PATH = src/*/
+SRCS = $(addprefix $(SRC_PATH), $(SRC))
+
+OBJ_PATH = obj/
+OBJ = $(SRC:.c=.o)
+OBJS = $(addprefix $(OBJ_PATH), $(OBJ))
+
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I $(INCLUDE)
+RM = rm -rf
 
-$(NAME): $(MY_OBJECTS)
-	@ar r $(NAME) $(MY_OBJECTS)
+#	RULES	#
 
-all:    $(NAME)
+all: $(NAME)
+
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+	@mkdir -p $(OBJ_PATH)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJS) $(INCLUDE)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "$(GREEN)<+> Libft has been created! <+>$(COLOR_OFF)"
 
 clean:
-		@rm -f $(MY_OBJECTS) $(BONUS_OBJECTS)
+	@$(RM) $(OBJ_PATH)
 
 fclean: clean
-		@rm -f $(NAME)
+	@$(RM) $(NAME)
+	@echo "$(GREEN)<-> Libft cleaned successfuly! <->$(COLOR_OFF)"
 
 re: fclean all
 
-bonus: $(BONUS_OBJECTS)
-	@ar rcs $(NAME) $(BONUS_OBJECTS)
-	@echo "Bonus has been compiled"
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

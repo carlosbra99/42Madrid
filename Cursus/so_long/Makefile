@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: carlos <carlos@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/07/14 14:13:15 by carlos            #+#    #+#              #
+#    Updated: 2024/07/14 16:00:35 by carlos           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #	COLOURS	#
 
 GREEN = \033[0:32m
@@ -67,8 +79,8 @@ fclean: clean
 re: fclean all
 
 norm:
-    norminette lib/libft
-    norminette src
-    @echo "\nNorminette passed ✓ \n"
+	norminette lib/libft
+	norminette src
+	@echo "\nNorminette passed ✓ \n"
 
 .PHONY: all clean fclean re norm
