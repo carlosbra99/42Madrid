@@ -6,11 +6,11 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 12:06:12 by carlos            #+#    #+#             */
-/*   Updated: 2024/07/13 17:51:46 by carlos           ###   ########.fr       */
+/*   Updated: 2024/07/14 11:46:59 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef SO_LONG_H
+#ifndef SO_LONG_H
 # define SO_LONG_H
 
 # include <mlx.h>
