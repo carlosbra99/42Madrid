@@ -6,7 +6,7 @@
 #    By: carlos <carlos@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/14 14:13:15 by carlos            #+#    #+#              #
-#    Updated: 2024/07/14 17:52:43 by carlos           ###   ########.fr        #
+#    Updated: 2024/07/14 18:45:20 by carlos           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ INCLUDE = inc/
 
 CC = gcc
 CFLAGS =  -Wall -Wextra -Werror -I $(INCLUDE) -I ./lib/libft/include -I ./lib/minilibx-linux
-LFLAGS =  -L ./lib/minilibx-linux/ -lmlx -Ilmlx -lXext -lX11
+LFLAGS =  -L $(MLX_PATH) -lmlx -L /usr/X11/lib -lXext -lX11 -lXrandr -lXinerama -lXcursor -lXpm -lm -lbsd
 RM = rm -rf
 
 #	RULES	#

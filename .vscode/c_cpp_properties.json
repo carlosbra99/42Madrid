@@ -6,7 +6,10 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/Cursus/so_long/lib/minilibx-linux",
                 "${workspaceFolder}/Cursus/so_long/lib/libft",
-                "${workspaceFolder}/Cursus/so_long/inc"
+                "${workspaceFolder}/Cursus/so_long/inc",
+                "${workspaceFolder}/Cursus/so_long/lib/libft/include",
+                "/usr/include",
+                "/usr/include/x86_64-linux-gnu"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
