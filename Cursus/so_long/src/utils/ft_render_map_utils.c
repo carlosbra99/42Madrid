@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 12:28:13 by carlos            #+#    #+#             */
-/*   Updated: 2024/07/14 14:06:40 by carlos           ###   ########.fr       */
+/*   Updated: 2024/07/14 17:12:10 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_render_player(t_game *game)
 	int		x;
 
 	img = mlx_xpm_file_to_image(game->mlx,
-			"./textures/character.xpm", &w, &h);
+			"./textures/char_idle_down.xpm", &w, &h);
 	if (!img)
 		ft_exit_program(ERROR_IMG_READING, NO_MAP, game);
 	y = 0;

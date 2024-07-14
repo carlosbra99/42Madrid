@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 12:06:12 by carlos            #+#    #+#             */
-/*   Updated: 2024/07/14 12:53:19 by carlos           ###   ########.fr       */
+/*   Updated: 2024/07/14 17:13:46 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,15 @@ typedef struct s_game
 # define ITEM 67
 # define EXIT 69
 # define PLAYER 80
+/* -- ASSETS -- */
+# define C_WALK_UP "./textures/char_walk_up.xpm"
+# define C_WALK_DOWN "./textures/char_walk_down.xpm"
+# define C_WALK_LEFT "./textures/char_walk_left.xpm"
+# define C_WALK_RIGHT "./textures/char_walk_right.xpm"
+# define C_IDLE_UP "./textures/char_idle_up.xpm"
+# define C_IDLE_DOWN "./textures/char_idle_down.xpm"
+# define C_IDLE_LEFT "./textures/char_idle_left.xpm"
+# define C_IDLE_RIGHT "./textures/char_idle_right.xpm"
 /* -- ERROR MESSAGES -- */
 # define ERROR_DUP "The map has a duplicated exit or initial position\n"
 # define ERROR_LACK "The map lacks an exit, an item or an initial position\n"
