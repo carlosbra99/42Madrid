@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 17:57:31 by carlos            #+#    #+#             */
-/*   Updated: 2024/07/13 17:58:15 by carlos           ###   ########.fr       */
+/*   Updated: 2024/07/14 12:45:42 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ static void	ft_move_up(t_game *game, t_position *player, int w, int h)
 	if (game->map->map[player->y - 1][player->x] != WALL
 		&& game->map->map[player->y - 1][player->x] != EXIT)
 	{
-		if (!count)
+		/*if (!count)
 			count = 2;
 		if (count % 2 == 0)
 			img = mlx_xpm_file_to_image(game->mlx, C_WALK_UP, &w, &h);
 		else
-			img = mlx_xpm_file_to_image(game->mlx, C_IDLE_UP, &w, &h);
+			img = mlx_xpm_file_to_image(game->mlx, C_IDLE_UP, &w, &h);*/
 		if (!img)
 			ft_exit_program(ERROR_IMG_READING, NO_MAP, game);
 		ft_player_move_up_2(game, player, img);
@@ -52,12 +52,12 @@ static void	ft_move_down(t_game *game, t_position *player, int w, int h)
 	if (game->map->map[player->y + 1][player->x] != WALL
 		&& game->map->map[player->y + 1][player->x] != EXIT)
 	{
-		if (!count)
+		/*if (!count)
 			count = 2;
 		if (count % 2 == 0)
 			img = mlx_xpm_file_to_image(game->mlx, C_WALK_DOWN, &w, &h);
 		else
-			img = mlx_xpm_file_to_image(game->mlx, C_IDLE_DOWN, &w, &h);
+			img = mlx_xpm_file_to_image(game->mlx, C_IDLE_DOWN, &w, &h);*/
 		if (!img)
 			ft_exit_program(ERROR_IMG_READING, NO_MAP, game);
 		ft_player_move_down_2(game, player, img);
@@ -81,12 +81,12 @@ static void	ft_move_left(t_game *game, t_position *player, int w, int h)
 	if (game->map->map[player->y][player->x - 1] != WALL
 		&& game->map->map[player->y][player->x - 1] != EXIT)
 	{
-		if (!count)
+		/*if (!count)
 			count = 2;
 		if (count % 2 == 0)
 			img = mlx_xpm_file_to_image(game->mlx, C_WALK_LEFT, &w, &h);
 		else
-			img = mlx_xpm_file_to_image(game->mlx, C_IDLE_LEFT, &w, &h);
+			img = mlx_xpm_file_to_image(game->mlx, C_IDLE_LEFT, &w, &h);*/
 		if (!img)
 			ft_exit_program(ERROR_IMG_READING, NO_MAP, game);
 		ft_player_move_left_2(game, player, img);
@@ -110,12 +110,12 @@ static void	ft_move_right(t_game *game, t_position *player, int w, int h)
 	if (game->map->map[player->y][player->x + 1] != WALL
 		&& game->map->map[player->y][player->x + 1] != EXIT)
 	{
-		if (!count)
+		/*if (!count)
 			count = 2;
 		if (count % 2 == 0)
 			img = mlx_xpm_file_to_image(game->mlx, C_WALK_RIGHT, &w, &h);
 		else
-			img = mlx_xpm_file_to_image(game->mlx, C_IDLE_RIGHT, &w, &h);
+			img = mlx_xpm_file_to_image(game->mlx, C_IDLE_RIGHT, &w, &h);*/
 		if (!img)
 			ft_exit_program(ERROR_IMG_READING, NO_MAP, game);
 		ft_player_move_right_2(game, player, img);

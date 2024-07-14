@@ -6,7 +6,7 @@
 /*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 12:06:12 by carlos            #+#    #+#             */
-/*   Updated: 2024/07/14 11:46:59 by carlos           ###   ########.fr       */
+/*   Updated: 2024/07/14 12:53:19 by carlos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,56 +19,55 @@
 # include <stdbool.h>
 # include <fcntl.h>
 
-/* --POSITION STRUCT-- */
+/* -- POSITION STRUCT -- */
 typedef struct s_position
 {
-    int y;
-    int x;
-}   t_position;
+	int	y;
+	int	x;
+}	t_position;
 
-/* --MAP STRUCT-- */
+/* -- MAP STRUCT -- */
 typedef struct s_map
 {
-    int         fd;
-    char        **map;
-    char        **map_cpy;
-    int         width;
-    int         height;
-    t_position  *player;
-    t_position  *exit;
-}   t_map;
+	int			fd;
+	char		**map;
+	char		**map_cpy;
+	int			width;
+	int			height;
+	t_position	*player;
+	t_position	*exit;
+}	t_map;
 
-/* --GAME STRUCT-- */
+/* -- GAME STRUCT -- */
 typedef struct s_game
 {
-    void    *mlx;
-    void    *window;
-    int     win_width;
-    int     win_height;
-    size_t  steps;
-    int     items;
-    bool    exit_open;
-    t_map   *map;
-}   t_game;
+	void	*mlx;
+	void	*window;
+	int		win_width;
+	int		win_height;
+	size_t	steps;
+	int		items;
+	bool	exit_open;
+	t_map	*map;
+}	t_game;
 
-/* --GENERAL-- */
+/* -- GENERAL -- */
 # define NO_GAME NULL
 # define NO_MAP NULL
-/* --HOOKS-- */
+/* -- HOOKS -- */
 # define ON_DESTROY 17
 # define ESC_KEY 53
 # define W_KEY 13
 # define A_KEY 0
 # define S_KEY 1
 # define D_KEY 2
-/* --MAP-- */
+/* -- MAP -- */
 # define EMPTY 48
 # define WALL 49
 # define ITEM 67
 # define EXIT 69
 # define PLAYER 80
-/* --ASSETS-- */
-/* --ERROR MESSAGES-- */
+/* -- ERROR MESSAGES -- */
 # define ERROR_DUP "The map has a duplicated exit or initial position\n"
 # define ERROR_LACK "The map lacks an exit, an item or an initial position\n"
 # define ERROR_SHAPE "The map has wrong shape\n"
@@ -82,7 +81,7 @@ typedef struct s_game
 # define ERROR_IMG_READING "Image reading has failed\n"
 # define ERROR_LIST "The enemies list initialization failed\n"
 
-/* --PROTOTYPES-- */
+/* -- PROTOTYPES -- */
 void		ft_free_array(char **arr);
 void		ft_how_to_use(int count);
 void		ft_free_map(t_map *map);
