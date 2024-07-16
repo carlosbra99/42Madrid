@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: carlos <carlos@student.42.fr>              +#+  +:+       +#+         #
+#    By: cbravo-a <cbravo-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/14 14:13:15 by carlos            #+#    #+#              #
-#    Updated: 2024/07/14 18:45:20 by carlos           ###   ########.fr        #
+#    Updated: 2024/07/16 14:15:38 by cbravo-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ INCLUDE = inc/
 
 CC = gcc
 CFLAGS =  -Wall -Wextra -Werror -I $(INCLUDE) -I ./lib/libft/include -I ./lib/minilibx-linux
-LFLAGS =  -L $(MLX_PATH) -lmlx -L /usr/X11/lib -lXext -lX11 -lXrandr -lXinerama -lXcursor -lXpm -lm -lbsd
+LFLAGS =  -L$(MLX_PATH) -lmlx -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 RM = rm -rf
 
 #	RULES	#
@@ -61,7 +61,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
-	@$(CC) $(CFLAGS) $(LFLAGS) $(OBJS) $(LIBFT) $(MLX) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX) $(LFLAGS) -o $(NAME)
 	@echo "$(GREEN)<+> so_long has been created! <+>$(COLOR_OFF)"
 
 clean:

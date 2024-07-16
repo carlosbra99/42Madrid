@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_map_valid.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: carlos <carlos@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cbravo-a <cbravo-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 17:55:06 by carlos            #+#    #+#             */
-/*   Updated: 2024/07/14 12:45:09 by carlos           ###   ########.fr       */
+/*   Updated: 2024/07/16 19:27:36 by cbravo-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,8 @@ int	ft_map_valid(t_map *map)
 {
 	if (map->width == 0 && map->height == 0)
 		ft_exit_program(ERROR_EMPTY, map, NO_GAME);
+	else if (map->width >= 150 || map->height >= 150)
+		ft_exit_program(INVALID_MAP, map, NO_GAME);
 	else if (ft_invalid_shape(map, 0, 0))
 		ft_exit_program(ERROR_SHAPE, map, NO_GAME);
 	else if (ft_invalid_elements(map))
